@@ -4,15 +4,16 @@
 
   - [Markdown](/markdown/)
   - [Mermaid](/mermaid/)
+  - [Powershell](/pwsh/)
   - [GitHub](/github/)
 
-* Test
+* Test Developer
 
   - [Explore it](/explore/)
 
-* Productivity
+* Text Editor
 
   - [Alacritty](/alacritty/)
 
-* Other
+* GitHub
   - [GitHub Actions ](/github-actions/)

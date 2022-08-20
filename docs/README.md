@@ -1,7 +1,9 @@
-# Docs
+# Tooltips
 
 ## Favorites
 
-[markdown](markdown/README.md)
+[Markdown](markdown/README.md)
 
-[mermaid](mermaid/README.md)
+[Mermaid](mermaid/README.md)
+
+[Powershell](pwsh/README.md)

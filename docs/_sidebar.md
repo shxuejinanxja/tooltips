@@ -1,11 +1,14 @@
 - [Home](/)
 
-* Essential
+* Script
+
+  - [Powershell](/pwsh/)
+
+* Writing
 
   - [Markdown](/markdown/)
   - [Mermaid](/mermaid/)
-  - [Powershell](/pwsh/)
-  - [GitHub](/github/)
+  - [docsify](/docsify/)
 
 * Test Developer
 
@@ -13,7 +16,9 @@
 
 * Text Editor
 
+  - [nvim](/neovim/)
   - [Alacritty](/alacritty/)
 
 * GitHub
+  - [GitHub](/github/)
   - [GitHub Actions ](/github-actions/)

@@ -12,7 +12,7 @@
 
 * Productivity
 
-  - [Alacritty](/Alacritty/)
+  - [Alacritty](/alacritty/)
 
 * Other
   - [GitHub Actions ](/github-actions/)

@@ -1,24 +1,23 @@
 # Tooltips
 
-## Favorites
-
-[Markdown](markdown/README.md)
-
-[Mermaid](mermaid/README.md)
-
-[Powershell](pwsh/README.md)
-
 ## Structure
 
-```markdown
+```structure
 docs
-├───alacritty
 ├───apps
-├───docsify
-├───explore
-├───github
-├───github-actions
-├───mermaid
-├───neovim
-└───pwsh
+├───coding
+│   └───pwsh
+├───editor
+│   ├───alacritty
+│   └───neovim
+├───TD
+│   └───explore
+├───version-control
+│   ├───git
+│   ├───github
+│   └───github-actions
+└───writing
+    ├───docsify
+    ├───markdown
+    └───mermaid
 ```

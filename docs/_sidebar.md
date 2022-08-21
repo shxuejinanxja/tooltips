@@ -1,14 +1,14 @@
 - [Home](/)
 
-* Script
+* Coding
 
-  - [Powershell](/pwsh/)
+  - [Powershell](/coding/pwsh/)
 
 * Writing
 
-  - [Markdown](/markdown/)
-  - [Mermaid](/mermaid/)
-  - [docsify](/docsify/)
+  - [Markdown](/writing/markdown/)
+  - [Mermaid](/writing/mermaid/)
+  - [docsify](/writing/docsify/)
 
 * Apps
 
@@ -16,13 +16,15 @@
 
 * Test Developer
 
-  - [Explore it](/explore/)
+  - [Explore it](/TD/explore/)
 
 * Text Editor
 
-  - [nvim](/neovim/)
-  - [Alacritty](/alacritty/)
+  - [nvim](/editor/neovim/)
+  - [Alacritty](/editor/alacritty/)
 
-* GitHub
-  - [GitHub](/github/)
-  - [GitHub Actions ](/github-actions/)
+* Version Control
+
+  - [Git](/version-control/git/)
+  - [GitHub](/version-control/github/)
+  - [GitHub Actions ](/version-control/github-actions/)

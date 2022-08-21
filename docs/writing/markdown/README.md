@@ -5,7 +5,7 @@
 ### links
 
 - [doc internal link](#reference-of-markdown)
-- [project internal link](/explore/charter.md)
+- [project internal link](/TD/explore/charter.md)
 
 ### quote
 

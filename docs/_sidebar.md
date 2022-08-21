@@ -10,6 +10,10 @@
   - [Mermaid](/mermaid/)
   - [docsify](/docsify/)
 
+* Apps
+
+  - [apps](/apps/)
+
 * Test Developer
 
   - [Explore it](/explore/)

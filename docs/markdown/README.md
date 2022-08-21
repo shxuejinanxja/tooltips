@@ -1,26 +1,41 @@
 # Markdown
 
-## links
+## Examples
 
-[link to other readme in same repo with relative path](explore/charter.md)
+### links
 
-[reference vscode-dev-containers](https://github.com/microsoft/vscode-dev-containers/blob/main/script-library/README.md)
+- [doc internal link](#reference-of-markdown)
+- [project internal link](/explore/charter.md)
 
-[markdown-guidance](https://docs.microsoft.com/en-us/azure/devops/project/wiki/markdown-guidance?view=azure-devops)
-
-[docsify](https://docsify.js.org/#/more-pages)
-
-[mermaid](https://mermaid-js.github.io/mermaid/#/)
-
-[how to add internal link reference](https://stackoverflow.com/questions/2822089/how-to-link-to-part-of-the-same-document-in-markdown)
-
-[example internal link to # foo](#foo-some-words)
-
-## quote
+### quote
 
 > this is the quote
 >
 > > this is the second line of quote
 > > this is the second line of quote
 
-## Foo SOME WORDS
+### Mermaid
+
+```mermaid
+graph LR
+  Mermaid --> Diagram
+```
+
+### Divider
+
+up
+
+---
+
+down
+
+### Todo list
+
+- [ ] Todo 1
+- [ ] Todo 2
+
+## Reference of Markdown
+
+- [markdown-guidance](https://docs.microsoft.com/en-us/azure/devops/project/wiki/markdown-guidance?view=azure-devops)
+- [how to add internal link reference](https://stackoverflow.com/questions/2822089/how-to-link-to-part-of-the-same-document-in-markdown)
+- [markdown in vscode devcontainer](https://github.com/microsoft/vscode-dev-containers/blob/main/script-library/README.md)

@@ -78,3 +78,7 @@ sequenceDiagram
     Timer-->>-Cook: Done!
     Note left of Timer: mirrorActors turned off
 ```
+
+## Reference
+
+- [mermaid](https://mermaid-js.github.io/mermaid/#/)

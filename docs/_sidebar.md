@@ -1,14 +1,18 @@
 - [Home](/)
 
-* Coding
-
-  - [Powershell](/coding/pwsh/)
-
 * Writing
 
   - [Markdown](/writing/markdown/)
   - [Mermaid](/writing/mermaid/)
   - [docsify](/writing/docsify/)
+
+* Coding
+
+  - [Powershell](/coding/pwsh/)
+
+* Data
+
+  - [Its all analytics](/data/its-all-analytics.md)
 
 * Apps
 

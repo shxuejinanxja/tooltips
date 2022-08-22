@@ -1,5 +1,11 @@
 # tips for mermaid
 
+## examples
+
+[flowchart](flowchart.md)
+
+[official flowchart](https://mermaid-js.github.io/mermaid/#/flowchart)
+
 ## how to add mermaid into docsify
 
 add following to the index.html

@@ -2,7 +2,7 @@
 
 ## Charter your explorations
 
-[charter](explore/charter.md)
+[charter](charter.md)
 
 ## Evaluate Results
 

@@ -9,3 +9,7 @@
 ## Useful functions
 
 `help ConvertFrom-Markdown -Online`
+
+## links
+
+[everything about array](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.2)

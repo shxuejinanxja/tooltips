@@ -6,16 +6,15 @@
 docs
 ├───apps
 ├───coding
+│   ├───APIs
 │   └───pwsh
+├───data
 ├───editor
 │   ├───alacritty
 │   └───neovim
-├───TD
+├───git
+├───td
 │   └───explore
-├───version-control
-│   ├───git
-│   ├───github
-│   └───github-actions
 └───writing
     ├───docsify
     ├───markdown

@@ -4,20 +4,14 @@
 
 Access to [gist](https://gist.github.com/) to create secret or public gist.
 
-## use Mermaid in gist
+### use Mermaid in gist
 
 Mermaid can be directly used in gist with following example
 
 ```mermaid
-%%{init: {
-"flowchart":{
-    "diagramPadding": 64
-  }
-}}%%
-graph TD;
+graph LR;
 a-->b;
 a-->c;
-c-->b;
 b-->c;
 ```
 
@@ -29,3 +23,7 @@ For free user, the docs can be depolied with public repo.
 ### github actions can convert docs with pandoc
 
 [pandoc with github-actions](https://pandoc.org/installing.html#github-actions)
+
+## github release
+
+[reference](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)

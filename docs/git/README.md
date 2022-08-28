@@ -1,6 +1,6 @@
-# git
+# Git and GitHub
 
-## submodule
+## Git
 
 > How to include other git repo in current repo?
 
@@ -10,3 +10,9 @@
 - commit the change to current repo
 - clone a project with submodule `git clone --recurse-submodules https://github.com/chaconinc/MainProject`
 - update the submodule `git submodule update --remote`
+
+## github
+
+[github](./github.md)
+
+[github actions](./github-actions.md)

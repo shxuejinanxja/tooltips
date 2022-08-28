@@ -9,6 +9,7 @@
 * Coding
 
   - [Powershell](/coding/pwsh/)
+  - [Designing APIs](/coding/APIs/)
 
 * Data
 
@@ -18,17 +19,15 @@
 
   - [apps](/apps/)
 
-* Test Developer
+* Test Development
 
-  - [Explore it](/TD/explore/)
+  - [Explore it](/td/explore/)
 
 * Text Editor
 
   - [nvim](/editor/neovim/)
   - [Alacritty](/editor/alacritty/)
 
-* Version Control
+* Git and GitHub
 
-  - [Git](/version-control/git/)
-  - [GitHub](/version-control/github/)
-  - [GitHub Actions ](/version-control/github-actions/)
+  - [Git](/git/)

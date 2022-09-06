@@ -2,6 +2,7 @@
 
 ## keymap
 
-| Action | Key | Notes                      |
-| ------ | --- | -------------------------- |
-| Hover  | K   | used in markdown dictonary |
+| Action      | Key | Notes                       |
+| ----------- | --- | --------------------------- |
+| Hover       | K   | used in markdown dictionary |
+| Switch case | ~   |                             |

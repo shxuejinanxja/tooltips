@@ -16,3 +16,7 @@
 [github](./github.md)
 
 [github actions](./github-actions.md)
+
+## git command
+
+- compare diff between main and linux branch `git diff main..linux`

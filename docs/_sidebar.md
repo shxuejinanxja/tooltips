@@ -15,6 +15,8 @@
 
   - [Its all analytics](/data/its-all-analytics.md)
 
+* [AWS](/aws/)
+
 * Apps
 
   - [apps](/apps/)

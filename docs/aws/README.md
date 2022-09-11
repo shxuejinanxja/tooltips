@@ -24,3 +24,5 @@ For a Bitnami AMI, the user name is bitnami.
 Otherwise, check with the AMI provider.
 
 ### [troubles shooting instance connections](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html#TroubleshootingInstancesConnectionTimeout)
+
+## [Postman](./postman.md)

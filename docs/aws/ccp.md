@@ -124,32 +124,39 @@ Start from OUs.
   - shared acrss all accounts for common services
 - security services
 
+#### additional OUs
+
+- sandbox OUs
+- workloads OUs
+- suspended OUs
+
 ## dictornary
 
 | on-premise | On-premises is the software and technology that is located within the physical confines of an enterprise often in the company’s data center as opposed to running remotely on hosted servers or in the cloud. |
 
 | term   | meaning                         |
 | ------ | ------------------------------- |
-|        |                                 |
+| OUs    | Organization Units              |
 | AMIs   | Amazon Machine Images           |
+| AuP    | Acceptable Use Policy           |
+| AZ     | avaiability zone                |
 | UAT    | User Acceptance Testing         |
 | LOB    | line of business                |
-| AZ     | avaiability zone                |
 | ELB    | Elastic Load Balancer           |
 | CDN    | content delivery network        |
-| EC2    | Elastic Compute Cloud           |
-| S3     | Simple storage Service          |
 | bucket | container                       |
 | RDS    | Relational Database Service     |
 | DNS    | Domain Name System              |
-| SSD    | solid-state driver              |
+| EC2    | Elastic Compute Cloud           |
 | ECS    | Elastic Container Service       |
 | EKS    | Elastic Kubernetes Service      |
 | EMR    | Elastic MapReduce               |
 | PHD    | Personal Health Dashboard       |
 | IEM    | Infrastructure Event Management |
-| AuP    | Acceptable Use Policy           |
-|        |                                 |
+| IAM    | Identity and Access Management  |
+| SCPs   | Service Control Policies        |
+| SSD    | solid-state driver              |
+| S3     | Simple storage Service          |
 |        |                                 |
 |        |                                 |
 |        |                                 |

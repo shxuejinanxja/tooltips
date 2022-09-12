@@ -63,12 +63,76 @@ aws S3: althrough S3 buckets need to be created in each region. But AWS S3 servi
 - enterprise on-ramp
 - enterprise
 
+### aws accounts and AWS organizations
+
+#### why multi-account aws environment
+
+- isolation
+  - experiment
+  - development
+  - UAT
+  - production
+- limited visibility
+- isolation of security and identity management
+  - cross-account access
+  - principle of least privilege
+- isolation of recovery or audit accounts
+
+#### aws landing zone(deprecated)
+
+baseline blueprint
+
+#### aws control tower
+
+deploy landing zone
+
+#### managing multi-accounts - aws organizations
+
+offered free but the resources are chargeable
+
+- management account -- previously called master account
+- member account
+
+Organization Units (OUs)
+
+- where some accounts share similar types of workloads or functions
+
+Service Control Policies(SCPs)
+
+- apply to OUs or directly to account
+
+AWS organizationscan be deployed using one of two options
+
+- All features -- including consolidated billing feature
+- consolidated billing feature
+
+benefits of consolidated billing feature
+
+- single bill
+- easy tracking
+- volume discounts
+- free service
+
+#### how many aws accounts needed?
+
+it's advisrable to create accounts that meet your functional requirement and fulfill your security controls, rather than simply creating accounts based on some corporate hierarchical nature
+Start from OUs.
+
+#### core aws OUs
+
+- infrastructure services account
+  - shared acrss all accounts for common services
+- security services
+
 ## dictornary
 
 | on-premise | On-premises is the software and technology that is located within the physical confines of an enterprise often in the company’s data center as opposed to running remotely on hosted servers or in the cloud. |
 
 | term   | meaning                         |
 | ------ | ------------------------------- |
+|        |                                 |
+| AMIs   | Amazon Machine Images           |
+| UAT    | User Acceptance Testing         |
 | LOB    | line of business                |
 | AZ     | avaiability zone                |
 | ELB    | Elastic Load Balancer           |

@@ -32,7 +32,60 @@
 
 ### aws and global infrastructure
 
+#### region and avaiability zone
+
+one and many
+
+#### edge locations
+
+CDN
+CloudFront
+regional edge caches
+
+#### global services
+
+IAM
+CloudFront
+aws Route 53
+aws S3: althrough S3 buckets need to be created in each region. But AWS S3 service is a global services.
+
+#### on-premises services
+
+- Amazon Snow Family
+- Amazon Storage Gateway
+- Amazon Outposts
+
+#### aws support plan
+
+- basic support plan
+- developer support plan
+- business support plan
+- enterprise on-ramp
+- enterprise
+
 ## dictornary
 
-LOB : line of business
-on-premise: On-premises is the software and technology that is located within the physical confines of an enterprise often in the company’s data center as opposed to running remotely on hosted servers or in the cloud.
+| on-premise | On-premises is the software and technology that is located within the physical confines of an enterprise often in the company’s data center as opposed to running remotely on hosted servers or in the cloud. |
+
+| term   | meaning                         |
+| ------ | ------------------------------- |
+| LOB    | line of business                |
+| AZ     | avaiability zone                |
+| ELB    | Elastic Load Balancer           |
+| CDN    | content delivery network        |
+| EC2    | Elastic Compute Cloud           |
+| S3     | Simple storage Service          |
+| bucket | container                       |
+| RDS    | Relational Database Service     |
+| DNS    | Domain Name System              |
+| SSD    | solid-state driver              |
+| ECS    | Elastic Container Service       |
+| EKS    | Elastic Kubernetes Service      |
+| EMR    | Elastic MapReduce               |
+| PHD    | Personal Health Dashboard       |
+| IEM    | Infrastructure Event Management |
+| AuP    | Acceptable Use Policy           |
+|        |                                 |
+|        |                                 |
+|        |                                 |
+|        |                                 |

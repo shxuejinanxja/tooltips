@@ -15,8 +15,10 @@
 
   - [Its all analytics](/data/its-all-analytics.md)
 
-* [AWS](/aws/)
-
+* Web
+  - [aws](/aws/)
+  - [ccp](/aws/ccp.md)
+  - [Postman](/aws/postman.md)
 * Apps
 
   - [apps](/apps/)

@@ -30,3 +30,12 @@ After set init value. Need to use reset button to update it to the current value
 #### save response data as environment variable
 
 you can use test to do it. Tests are written in javascript and are run after the response is received. [Write Tests](https://learning.postman.com/docs/writing-scripts/test-scripts/)
+
+## network error and fix
+
+### connect to internet but get `Fix: Windows Can’t Communicate with the Device or Resource (Primary DNS Server)` error
+
+[solution](https://appuals.com/fix-windows-cant-communicate-device-resource-primary-dns-server/#:~:text=%20Fix%3A%20Windows%20Can%E2%80%99t%20Communicate%20with%20the%20Device,If%20you%20are%20receiving%20this%20error...%20More%20)
+
+- Obtain DNS server address automatically.
+  -

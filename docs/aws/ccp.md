@@ -175,6 +175,18 @@ root user is the most privileged account and should not be used daily operation
         arn:partition:service:region:account-id:resource-type:resource-id
 
 - [IAM policy simulator](https://policysim.aws.amazon.com/https://policysim.aws.amazon.com/)
+- assign temporary credentials with IAM roles.
+  - advantage of use temporary credentials:
+    - more secure
+    - avoid distribute credentials around devices
+    - avoid credentials management overhead
+  - IAM roles can be used to grant access to fedrated users( external users)
+  - IAM roles make user of STS. STS assign temporary credentials to the identity that assume the role. temporary credentials include:
+  - access key ID
+  - secret access key
+  - security token
+- review credential reports
+  - aws allow you download csv file including a list of all your IAM user in your aws account and the status of their credentials.
 
 ## dictornary
 
@@ -192,6 +204,7 @@ root user is the most privileged account and should not be used daily operation
 | AZ     | avaiability zone                |
 | UAT    | User Acceptance Testing         |
 | LOB    | line of business                |
+| Idp    | Identity Provider               |
 | ELB    | Elastic Load Balancer           |
 | CDN    | content delivery network        |
 | bucket | container                       |
@@ -207,6 +220,7 @@ root user is the most privileged account and should not be used daily operation
 | SCPs   | Service Control Policies        |
 | SSD    | solid-state driver              |
 | S3     | Simple storage Service          |
+| STS    | security Token Service          |
 |        |                                 |
 |        |                                 |
 |        |                                 |

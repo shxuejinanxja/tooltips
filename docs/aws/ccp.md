@@ -188,39 +188,75 @@ root user is the most privileged account and should not be used daily operation
 - review credential reports
   - aws allow you download csv file including a list of all your IAM user in your aws account and the status of their credentials.
 
+## s3
+
+### storage options on aws
+
+#### block storage
+
+fixed-size chunk
+
+#### File storage
+
+has limitation of number of folder and depth of path
+
+- EFS
+- FSx for Lustre
+- FSx for Windows File Server
+
+#### Object storage
+
+- a type of unstructured data
+- it's a flat file structure
+- metadata can contain many information and used for data analytics
+
+## introduction to aws s3
+
+### buckets and objects
+
+buckets need to have a unique global namespace as their contents can be made accessible over the public internet. It need to be unqiue accoss all aws ecosystem.
+first come first serve basis.
+
 ## dictornary
 
 - **on-premise** : On-premises is the software and technology that is located within the physical confines of an enterprise often in the company’s data center as opposed to running remotely on hosted servers or in the cloud.
 - authentication : who or what can access the aws services in your account
 - authorization : what these entities are permitted to do in your account
+- metadata : information about the object—such as its name, and so on
 
-| term   | meaning                         |
-| ------ | ------------------------------- |
-| OUs    | Organization Units              |
-| ACLs   | Access Control Lists            |
-| ARN    | Amazon Resource Name            |
-| AMIs   | Amazon Machine Images           |
-| AuP    | Acceptable Use Policy           |
-| AZ     | avaiability zone                |
-| UAT    | User Acceptance Testing         |
-| LOB    | line of business                |
-| Idp    | Identity Provider               |
-| ELB    | Elastic Load Balancer           |
-| CDN    | content delivery network        |
-| bucket | container                       |
-| RDS    | Relational Database Service     |
-| DNS    | Domain Name System              |
-| EC2    | Elastic Compute Cloud           |
-| ECS    | Elastic Container Service       |
-| EKS    | Elastic Kubernetes Service      |
-| EMR    | Elastic MapReduce               |
-| PHD    | Personal Health Dashboard       |
-| IEM    | Infrastructure Event Management |
-| IAM    | Identity and Access Management  |
-| SCPs   | Service Control Policies        |
-| SSD    | solid-state driver              |
-| S3     | Simple storage Service          |
-| STS    | security Token Service          |
-|        |                                 |
-|        |                                 |
-|        |                                 |
+| term   | meaning                            |
+| ------ | ---------------------------------- |
+|        |                                    |
+| EFS    | Elastic File System                |
+| OUs    | Organization Units                 |
+| ACLs   | Access Control Lists               |
+| ARN    | Amazon Resource Name               |
+| AMIs   | Amazon Machine Images              |
+| AuP    | Acceptable Use Policy              |
+| AZ     | avaiability zone                   |
+| CDN    | content delivery network           |
+| DAS    | Direct-Attached Storage            |
+| DNS    | Domain Name System                 |
+| EBS    | Elastic Block Store                |
+| EC2    | Elastic Compute Cloud              |
+| ECS    | Elastic Container Service          |
+| EKS    | Elastic Kubernetes Service         |
+| ELB    | Elastic Load Balancer              |
+| EMR    | Elastic MapReduce                  |
+| ERP    | Enterprise Resource Planning       |
+| UAT    | User Acceptance Testing            |
+| LOB    | line of business                   |
+| bucket | container                          |
+| RDS    | Relational Database Service        |
+| PHD    | Personal Health Dashboard          |
+| IOPS   | input/output operations per second |
+| Idp    | Identity Provider                  |
+| IEM    | Infrastructure Event Management    |
+| IAM    | Identity and Access Management     |
+| SCPs   | Service Control Policies           |
+| SSD    | solid-state driver                 |
+| S3     | Simple storage Service             |
+| STS    | security Token Service             |
+| SANs   | storage area networks              |
+| SMB    | Server MEssage Block               |
+|        |                                    |

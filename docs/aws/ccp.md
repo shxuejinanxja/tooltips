@@ -216,6 +216,60 @@ has limitation of number of folder and depth of path
 
 buckets need to have a unique global namespace as their contents can be made accessible over the public internet. It need to be unqiue accoss all aws ecosystem.
 first come first serve basis.
+flat filesystem.
+
+### managing objects in a bucket
+
+prefix delimiter
+key and value
+
+### access permissions
+
+- bucket policies
+- ACLs
+  - Server access logging
+- IAM policies
+- it can be attached directly to the resources. can't attach a IAM policy to an IAMuser in another aws account.
+
+### s3 storage class
+
+you can host different objects under different storage classes with in the same bucket.you do not need to create speerate buckets for each storage class.
+
+#### frequent access
+
+Amazon S3 Standard
+
+#### infrequent access
+
+minimum object size of 128k.
+
+- Amazon S3 Standard-IA
+- Amazon S3 One Zone-IA
+
+#### archive storage
+
+- Amazon Glacier
+  - initiate a restore request and wait for some time to download data.
+- Amazon Glacier Deep Archive
+  - lowest cost
+
+#### unpredictable access patterns
+
+- intelligent-tiering
+
+### S3 on Outposts
+
+### versioning
+
+three states:
+
+- unversioned(default)
+- versioning-enabled
+- versioning-suspended
+  you can't change from versioning-enabled back to unversioned. but you can change to versioning-suspended from it.
+  ater versioning, the overwrite and delete is not actually happened. just a tag was add to it.
+  versioning is not free. see the "how ma i changed from using versioning" [s3 faq](https://aws.amazon.com/s3/faqs/#Billing)
+  here is another [article](https://cloudiamo.com/2020/06/20/figuring-out-the-cost-of-versioning-on-amazon-s3/)
 
 ## dictornary
 
@@ -224,39 +278,52 @@ first come first serve basis.
 - authorization : what these entities are permitted to do in your account
 - metadata : information about the object—such as its name, and so on
 
-| term   | meaning                            |
-| ------ | ---------------------------------- |
-|        |                                    |
-| EFS    | Elastic File System                |
-| OUs    | Organization Units                 |
-| ACLs   | Access Control Lists               |
-| ARN    | Amazon Resource Name               |
-| AMIs   | Amazon Machine Images              |
-| AuP    | Acceptable Use Policy              |
-| AZ     | avaiability zone                   |
-| CDN    | content delivery network           |
-| DAS    | Direct-Attached Storage            |
-| DNS    | Domain Name System                 |
-| EBS    | Elastic Block Store                |
-| EC2    | Elastic Compute Cloud              |
-| ECS    | Elastic Container Service          |
-| EKS    | Elastic Kubernetes Service         |
-| ELB    | Elastic Load Balancer              |
-| EMR    | Elastic MapReduce                  |
-| ERP    | Enterprise Resource Planning       |
-| UAT    | User Acceptance Testing            |
-| LOB    | line of business                   |
-| bucket | container                          |
-| RDS    | Relational Database Service        |
-| PHD    | Personal Health Dashboard          |
-| IOPS   | input/output operations per second |
-| Idp    | Identity Provider                  |
-| IEM    | Infrastructure Event Management    |
-| IAM    | Identity and Access Management     |
-| SCPs   | Service Control Policies           |
-| SSD    | solid-state driver                 |
-| S3     | Simple storage Service             |
-| STS    | security Token Service             |
-| SANs   | storage area networks              |
-| SMB    | Server MEssage Block               |
-|        |                                    |
+| term           | meaning                              |
+| -------------- | ------------------------------------ |
+|                |                                      |
+|                |                                      |
+| EFS            | Elastic File System                  |
+| OUs            | Organization Units                   |
+| ACLs           | Access Control Lists                 |
+| ARN            | Amazon Resource Name                 |
+| AMIs           | Amazon Machine Images                |
+| AuP            | Acceptable Use Policy                |
+| AZ             | avaiability zone                     |
+| CDN            | content delivery network             |
+| DAS            | Direct-Attached Storage              |
+| DR             | Disaster Recovery                    |
+| DNS            | Domain Name System                   |
+| EBS            | Elastic Block Store                  |
+| EC2            | Elastic Compute Cloud                |
+| ECS            | Elastic Container Service            |
+| EKS            | Elastic Kubernetes Service           |
+| ELB            | Elastic Load Balancer                |
+| EMR            | Elastic MapReduce                    |
+| ERP            | Enterprise Resource Planning         |
+| UAT            | User Acceptance Testing              |
+| LOB            | line of business                     |
+| bucket         | container                            |
+| RDS            | Relational Database Service          |
+| PHD            | Personal Health Dashboard            |
+| IOPS           | input/output operations per second   |
+| Idp            | Identity Provider                    |
+| IEM            | Infrastructure Event Management      |
+| IAM            | Identity and Access Management       |
+| JSON           | JavaScript Object Notation           |
+| SCPs           | Service Control Policies             |
+| SSD            | solid-state driver                   |
+| S3             | Simple storage Service               |
+| S3 Standard-IA | Amazon S3 Standard-Infrequent Access |
+| S3 One Zone-IA | Amazon S3 One Zone-Infrequent Access |
+| S3TA           | Amazon S3 Transfor Acceleration      |
+| SSL            | Secure Sockets Layer                 |
+| HTTPS          | HyperText Transfer Protocol Secure   |
+| STS            | security Token Service               |
+| SANs           | storage area networks                |
+| SMB            | Server MEssage Block                 |
+| URL            | Uniform Resource Locator             |
+|                |                                      |
+|                |                                      |
+|                |                                      |
+|                |                                      |
+|                |                                      |

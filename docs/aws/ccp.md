@@ -271,6 +271,71 @@ three states:
   versioning is not free. see the "how ma i changed from using versioning" [s3 faq](https://aws.amazon.com/s3/faqs/#Billing)
   here is another [article](https://cloudiamo.com/2020/06/20/figuring-out-the-cost-of-versioning-on-amazon-s3/)
 
+### life cycle
+
+can set up rule about after XX days, the objects are tranfor to cheaper storage option.
+
+### s3 bucket policy
+
+[sid](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html)
+
+### use aws s3 to host a static site
+
+it's quiet easy to host a static site with s3
+
+- uncheck the block public access when create s3 bucket
+- set bucket policy that allow s3:getobject for all resources in the bucket
+- the access point is the index.html's Object URL
+  But please notice that there is a fee about data transfor in aws s3
+  [aws s3 priciing](https://aws.amazon.com/s3/pricing/)
+
+## aws networking services - VPCs, Route 53, and CloudFront
+
+### IPv4 and IPv6
+
+Since IPv4 is limited and each device in the internet need unique ip adress, so IANA allocate a range o IP address for private use only. [IANA site](https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml)
+It's IPv4 notation. the number after the forwart slash is the subnet mask number.[about slash notation](https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/Fireware/overview/networksecurity/slash_about_c.html#:~:text=IPv4%20Slash%20notation%20is%20a%20compact%20way%20to,forward%20slash%20%28%2F%29%2C%20and%20the%20subnet%20mask%20number.)
+
+- 10.0.0.0/8 : 10.0.0.0~10.255.255.255
+- 172.16.0.0/12 :172.16.0.0~172.31.255.255
+- 192.168.0.0/16 :192.168.0.0~192.168.0.255
+
+  172.16.
+  1010 1100 0001 0000
+  172.31.
+  1010 1100 0001 1111
+
+### local device need inter access. NAT for the rescue
+
+### network size and classes
+
+| class | far left | range   | network portion | host portion |
+| ----- | -------- | ------- | --------------- | ------------ |
+| A     | 0        | 0~127   | 8               | 24           |
+| B     | 10       | 128~191 | 16              | 16           |
+| C     | 110      | 192~223 | 24              | 8            |
+
+### subnet masks
+
+AND operation by subnet mask so ip in same subnet will be same.
+
+### subnetting
+
+Subnetting is the process by which you can create sub-networks within a larger network.
+involve borrowing additional bits from the host portion of an ip address. these borrowed bits are used to create smaller subnetworks. Not borrow network from left.
+192.168.0.0 , subnet mark 255.255.255.224
+....1110 0000
+can create 8 subnet
+
+- 000 192.168.0.0/27
+- 001 192.168.32.0/27
+- 010 192.168.64.0/27
+- 011 192.168.96.0/27
+- 100 192.168.128.0/27
+- 101 192.168.160.0/27
+- 110 192.168.192.0/27
+- 111 192.168.224.0/27
+
 ## dictornary
 
 - **on-premise** : On-premises is the software and technology that is located within the physical confines of an enterprise often in the company’s data center as opposed to running remotely on hosted servers or in the cloud.
@@ -281,8 +346,7 @@ three states:
 | term           | meaning                              |
 | -------------- | ------------------------------------ |
 |                |                                      |
-|                |                                      |
-| EFS            | Elastic File System                  |
+| DMZ            | demilitarized zone                   |
 | OUs            | Organization Units                   |
 | ACLs           | Access Control Lists                 |
 | ARN            | Amazon Resource Name                 |
@@ -294,17 +358,20 @@ three states:
 | DR             | Disaster Recovery                    |
 | DNS            | Domain Name System                   |
 | EBS            | Elastic Block Store                  |
+| EFS            | Elastic File System                  |
 | EC2            | Elastic Compute Cloud                |
 | ECS            | Elastic Container Service            |
 | EKS            | Elastic Kubernetes Service           |
 | ELB            | Elastic Load Balancer                |
 | EMR            | Elastic MapReduce                    |
 | ERP            | Enterprise Resource Planning         |
-| UAT            | User Acceptance Testing              |
+| EUC            | End User Computing                   |
 | LOB            | line of business                     |
 | bucket         | container                            |
 | RDS            | Relational Database Service          |
 | PHD            | Personal Health Dashboard            |
+| IETF           | Internet Engineering Task Force      |
+| IANA           | Internet Assigned Numbers Authority  |
 | IOPS           | input/output operations per second   |
 | Idp            | Identity Provider                    |
 | IEM            | Infrastructure Event Management      |
@@ -322,8 +389,11 @@ three states:
 | SANs           | storage area networks                |
 | SMB            | Server MEssage Block                 |
 | URL            | Uniform Resource Locator             |
-|                |                                      |
-|                |                                      |
+| UAT            | User Acceptance Testing              |
+| VPC            | Virtual Private Cloud                |
+| Route 53       | Amazon's DNS                         |
+| CloudFront     | a CDN                                |
+| NAT            | Network Address Translation          |
 |                |                                      |
 |                |                                      |
 |                |                                      |

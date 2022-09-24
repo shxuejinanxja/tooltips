@@ -336,6 +336,69 @@ can create 8 subnet
 - 110 192.168.192.0/27
 - 111 192.168.224.0/27
 
+### CIDR
+
+192.168.1.0/24 --> avavible ip address is 256. Usable ip address is 256-2=254
+
+### VPCs
+
+default VPC for inbound internet
+
+### internet access
+
+By default, you custom VPCs need to be configured with internet access if you want the EC2 instances ithe VPC to send traffic to the internet.
+If you deploy servers that require direct inbound access from the internet, then you need to depoly them in the subnets that have a direct route to the internet.
+To configure a VPC with internet access, you need to deploy an internet gateway.
+
+- gateway
+- route table
+- EC2 instances in a public must have a public IP address
+  in term of cost, it's important to remember that elastic IP addresses are free only while they are associated with an EC2 instance that is in the running state. If it's stopped(or shutdown) you will incur charges for that elastic IP address in an hourly basis.
+
+### VPC security
+
+- security groups
+  - firewall that is designed to allow you to configure what type of traffic you permit, inbound and outbound, to your EC2 instances.
+  - act at the instance level and not the subnet level
+  - each VPC comes with a default security group that allow all traffic inbound but only where the source of that traffic is the security group itself.(aka ec2s associated with same security group can talk with each other)
+  - security groups do not allow any traffic to inbound from other sources(other than itself) until you create necessary rules. (specific protocol,port and source of the traffic)
+  - implicit allow. even you may not have configureed any inbound rules, response traffic to any outbound request will be premitted inbound by security group. Similar ways works for outbound. This feature is what makes security groups **stateful**
+  - other key features:
+    - can configure _allow_ but not _deny_
+    - specify separate rules for inbound and outbound traffic.
+    - can filter traffics based on the protocols and port numbers. Can also specify sources and destinations that can be other **security groups** which thus offering a layered security approach.
+- NACLs
+  - another firewall service that are designed to protect entire subnets.
+
+### NAT
+
+Enable EC2 instances with private IPv4 address access to internet without directly exposing them on the internet
+
+egress-only internet gateway(for IPv6?)
+
+### VPC peering
+
+It's a private network connection between two VPCs. it means that the traffic betweens VPCs over a peering connection does not traverse the public internet.
+The service allows you to connect multiple VPCs so that instances in one VPC can access resources in another VPC.
+You can create VPC peering connections between VPCs in one aws account or between aws accounts. it can also be configured between vpcs in the same region or across different regions.
+
+### VPC transit gateway
+
+problem with VPC peering is that every VPC must establish a one-to-one connection with its peer. You also need to configure your route table in eash of the peered VPCs to direct appropriate traffic across the peering connection.
+
+hub-and-spoke architectural model
+
+instead of talking to other VPC peering , all VPC talk to Transit Gateway.
+
+### VPNs
+
+you can also connect your VPC to your corporate network. This type of connection is known as VPN.
+A VPN is a secure encrypted site-to-site tunnel established between two endpoints over the public internet.
+
+### direct connect
+
+dedicated private connection that bypasses the internet .
+
 ## dictornary
 
 - **on-premise** : On-premises is the software and technology that is located within the physical confines of an enterprise often in the company’s data center as opposed to running remotely on hosted servers or in the cloud.
@@ -343,57 +406,61 @@ can create 8 subnet
 - authorization : what these entities are permitted to do in your account
 - metadata : information about the object—such as its name, and so on
 
-| term           | meaning                              |
-| -------------- | ------------------------------------ |
-|                |                                      |
-| DMZ            | demilitarized zone                   |
-| OUs            | Organization Units                   |
-| ACLs           | Access Control Lists                 |
-| ARN            | Amazon Resource Name                 |
-| AMIs           | Amazon Machine Images                |
-| AuP            | Acceptable Use Policy                |
-| AZ             | avaiability zone                     |
-| CDN            | content delivery network             |
-| DAS            | Direct-Attached Storage              |
-| DR             | Disaster Recovery                    |
-| DNS            | Domain Name System                   |
-| EBS            | Elastic Block Store                  |
-| EFS            | Elastic File System                  |
-| EC2            | Elastic Compute Cloud                |
-| ECS            | Elastic Container Service            |
-| EKS            | Elastic Kubernetes Service           |
-| ELB            | Elastic Load Balancer                |
-| EMR            | Elastic MapReduce                    |
-| ERP            | Enterprise Resource Planning         |
-| EUC            | End User Computing                   |
-| LOB            | line of business                     |
-| bucket         | container                            |
-| RDS            | Relational Database Service          |
-| PHD            | Personal Health Dashboard            |
-| IETF           | Internet Engineering Task Force      |
-| IANA           | Internet Assigned Numbers Authority  |
-| IOPS           | input/output operations per second   |
-| Idp            | Identity Provider                    |
-| IEM            | Infrastructure Event Management      |
-| IAM            | Identity and Access Management       |
-| JSON           | JavaScript Object Notation           |
-| SCPs           | Service Control Policies             |
-| SSD            | solid-state driver                   |
-| S3             | Simple storage Service               |
-| S3 Standard-IA | Amazon S3 Standard-Infrequent Access |
-| S3 One Zone-IA | Amazon S3 One Zone-Infrequent Access |
-| S3TA           | Amazon S3 Transfor Acceleration      |
-| SSL            | Secure Sockets Layer                 |
-| HTTPS          | HyperText Transfer Protocol Secure   |
-| STS            | security Token Service               |
-| SANs           | storage area networks                |
-| SMB            | Server MEssage Block                 |
-| URL            | Uniform Resource Locator             |
-| UAT            | User Acceptance Testing              |
-| VPC            | Virtual Private Cloud                |
-| Route 53       | Amazon's DNS                         |
-| CloudFront     | a CDN                                |
-| NAT            | Network Address Translation          |
-|                |                                      |
-|                |                                      |
-|                |                                      |
+| term           | meaning                                           |
+| -------------- | ------------------------------------------------- |
+|                |                                                   |
+| ACLs           | Access Control Lists                              |
+| ARN            | Amazon Resource Name                              |
+| AMIs           | Amazon Machine Images                             |
+| AuP            | Acceptable Use Policy                             |
+| AZ             | avaiability zone                                  |
+| bucket         | container                                         |
+| CIDR           | Classless Interdomain Routing                     |
+| CloudFront     | a CDN                                             |
+| CDN            | content delivery network                          |
+| DAS            | Direct-Attached Storage                           |
+| DR             | Disaster Recovery                                 |
+| DNS            | Domain Name System                                |
+| DMZ            | demilitarized zone (called public subnets on AWS) |
+| EBS            | Elastic Block Store                               |
+| EFS            | Elastic File System                               |
+| EC2            | Elastic Compute Cloud                             |
+| ECS            | Elastic Container Service                         |
+| EKS            | Elastic Kubernetes Service                        |
+| ELB            | Elastic Load Balancer                             |
+| EMR            | Elastic MapReduce                                 |
+| ERP            | Enterprise Resource Planning                      |
+| EUC            | End User Computing                                |
+| HTTPS          | HyperText Transfer Protocol Secure                |
+| IETF           | Internet Engineering Task Force                   |
+| IANA           | Internet Assigned Numbers Authority               |
+| IOPS           | input/output operations per second                |
+| Idp            | Identity Provider                                 |
+| IEM            | Infrastructure Event Management                   |
+| IAM            | Identity and Access Management                    |
+| IPSec          | Internet Protocol security                        |
+| JSON           | JavaScript Object Notation                        |
+| LOB            | line of business                                  |
+| NAT            | Network Address Translation                       |
+| NACLs          | Network Access Control Lists                      |
+| OUs            | Organization Units                                |
+| PHD            | Personal Health Dashboard                         |
+| RDS            | Relational Database Service                       |
+| Route 53       | Amazon's DNS                                      |
+| S3             | Simple storage Service                            |
+| S3 Standard-IA | Amazon S3 Standard-Infrequent Access              |
+| S3 One Zone-IA | Amazon S3 One Zone-Infrequent Access              |
+| S3TA           | Amazon S3 Transfor Acceleration                   |
+| SSL            | Secure Sockets Layer                              |
+| STS            | security Token Service                            |
+| SANs           | storage area networks                             |
+| SMB            | Server MEssage Block                              |
+| SCPs           | Service Control Policies                          |
+| SSD            | solid-state driver                                |
+| URL            | Uniform Resource Locator                          |
+| UAT            | User Acceptance Testing                           |
+| VPC            | Virtual Private Cloud                             |
+| VPNs           | Virtual Private Networks                          |
+| VPG            | Virtual Private Gateway                           |
+|                |                                                   |
+|                |                                                   |

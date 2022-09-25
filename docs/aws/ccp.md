@@ -399,6 +399,58 @@ A VPN is a secure encrypted site-to-site tunnel established between two endpoint
 
 dedicated private connection that bypasses the internet .
 
+### DNS and aws Route53
+
+DNS: a service which can help translate human-readable names into an IP address.
+The process of translating domain names to IP address is called **name resolution**
+Amazon Route53 offers following functions:
+
+- Domain registration
+  - Hosted zones
+    A hosted zone is a container that is used to store and manage your resource records and allows you to define how traffic is routed for your domain and any sub-domains.
+    - Public hosted zone
+      This is a container that allows you to define how you want to route traffic for your domain name across the public internet.
+    - Private hosted zone
+      This is a container that allows you to define how you want to route traffic for your domain name across private networks.
+  - DNS hostnames
+    - private DNS hostnames
+    - public DNS hostnames
+- DNS routing
+  - Routing policies
+    - Simple routing policy
+    - Failover routing policy
+      To offer high avaiability. Health check.
+    - Geolocation routing policy
+      your users' location is determined from the source of the DNS queries for your web service.
+    - Latency routing policy
+      offer the lowest latency
+    - Weighted routing policy
+      route different ratios of your total traffic to different resources associated with a single domain
+- Health checks
+  - that monitor an endpoint
+  - that monitor other health checks
+  - that monitor CloudWatch alarms
+
+Traffic Flow and Traffic Policies
+
+- Geoproximity routing policy : avavible only when you use Route53 Traffic Flow.
+  _bias_ value
+- Route53 Resolver
+
+### CloudFront
+
+- Implementing a robust CDN with Amazon CloudFront.
+  To configure Amazon CloudFront, you create a distribution endpoint that defines the types of content you want to serve and the source of that content.
+- price class
+  the most expensive price class is where your content is accessible via all edge locations globally. It's the default price class when you create your distribution , but ultimately offers the best performance.
+
+### Amazon API Gateway
+
+It helps you design application solutions that favor the microservices architecture in place of monolith design.
+With it , the front does not need to call different backend API to get the work done.
+With an API gateway, you essentially create an abstraction layer. Expose all the APIs that need to be made avaiable to external clients to call backend service.
+The request will then be route to the various backend microservices.
+
 ## dictornary
 
 - **on-premise** : On-premises is the software and technology that is located within the physical confines of an enterprise often in the company’s data center as opposed to running remotely on hosted servers or in the cloud.
@@ -419,6 +471,7 @@ dedicated private connection that bypasses the internet .
 | CloudFront     | a CDN                                             |
 | CDN            | content delivery network                          |
 | DAS            | Direct-Attached Storage                           |
+| DDoS           | Distributed Denial of Service                     |
 | DR             | Disaster Recovery                                 |
 | DNS            | Domain Name System                                |
 | DMZ            | demilitarized zone (called public subnets on AWS) |
@@ -457,10 +510,15 @@ dedicated private connection that bypasses the internet .
 | SMB            | Server MEssage Block                              |
 | SCPs           | Service Control Policies                          |
 | SSD            | solid-state driver                                |
+| TLD            | Top-Level Domain                                  |
+| TTL            | time-to-live                                      |
 | URL            | Uniform Resource Locator                          |
 | UAT            | User Acceptance Testing                           |
 | VPC            | Virtual Private Cloud                             |
 | VPNs           | Virtual Private Networks                          |
 | VPG            | Virtual Private Gateway                           |
+|                |                                                   |
+|                |                                                   |
+|                |                                                   |
 |                |                                                   |
 |                |                                                   |

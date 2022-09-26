@@ -451,6 +451,10 @@ With it , the front does not need to call different backend API to get the work 
 With an API gateway, you essentially create an abstraction layer. Expose all the APIs that need to be made avaiable to external clients to call backend service.
 The request will then be route to the various backend microservices.
 
+## aws EC2
+
+hypervisor: is a piece of software that allows you to create virtual resources such as virtual servers.
+
 ## dictornary
 
 - **on-premise** : On-premises is the software and technology that is located within the physical confines of an enterprise often in the company’s data center as opposed to running remotely on hosted servers or in the cloud.
@@ -496,6 +500,7 @@ The request will then be route to the various backend microservices.
 | LOB            | line of business                                  |
 | NAT            | Network Address Translation                       |
 | NACLs          | Network Access Control Lists                      |
+| NIC            | Network Interface Card                            |
 | OUs            | Organization Units                                |
 | PHD            | Personal Health Dashboard                         |
 | RDS            | Relational Database Service                       |
@@ -517,7 +522,7 @@ The request will then be route to the various backend microservices.
 | VPC            | Virtual Private Cloud                             |
 | VPNs           | Virtual Private Networks                          |
 | VPG            | Virtual Private Gateway                           |
-|                |                                                   |
+| VHD            | Virtual Hard Disk                                 |
 |                |                                                   |
 |                |                                                   |
 |                |                                                   |

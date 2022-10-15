@@ -101,6 +101,89 @@ println!("s1 = {}, s2 = {}", s1, s2);
 
 > returning values can also transfer ownship.
 
+## Reference and borrowing
+
+> a reference is like a pointer in that it's an address we can follow to access the data that stored at that address;that data is owned by some other variable. Unlike a pointer, a reference is guaranteed to point to a valid value of a particular type for the life of that reference.
+
+### mutable Reference
+
+one restriction: if you have a mutable reference to a value, you can have no other reference(mutable or immutable) to that value.
+
+### dangling reference
+
+> if you have a reference to some data, the compiler will ensure that the data will not go out of scope before the reference to the data does.
+
+## macros
+
+### println!
+
+by default the curly brackets tell println! to use formatting known as Display to output intended for direct end user consumption.
+
+### debug!
+
+dbg! will return the ownship of the expression's value.
+
+## slice
+
+> a slice is kind of reference, so it does not have ownship. it let you reference a contiguous sequence of elements in a collection rather than the whole.
+
+### string slice
+
+```rust
+fn main() {
+    let s = String::from("hello world");
+
+let hello = &s[0..5];
+	let world = &s[6..11];
+
+}
+
+```
+
+## struct
+
+### struct update
+
+the sync `..` specifies that the remaining field not explicitly set should have the same value as the fields in the given instance.
+
+```rust
+let user2=User{
+email:String::from("another email"),
+..user1
+}
+
+```
+
+be aware that if the user one contain field like name:String then the data in the name field of user1 will be move to user2. it will make user1.name not usable.
+but other field in the user1 is still accessable if they implement Copy trait.
+
+### tuple struct
+
+it have the added meaning the struct name provides but don't have names accociated with their fields.
+
+```rust
+struct Color(i32,i32,i32)
+struct Point(f32,f32,f32)
+let black=Color(0,0,0);
+let origin=Point(0.0,0.0,0.0);
+
+```
+
+### unit-like structs without any fields
+
+just like unit tuple which is `()`. the unit tuple represent an empty value
+unit like struct is useful when you need to implement a trait on some type but don't have any data that you want to store in the type itself.
+
+```rust
+struct AlwaysEqual
+let subject=AlwaysEqual;
+
+```
+
+### accociated functions
+
+all functions defined within an impl block are called accociated functions because they are associated with the type named after impl.
+
 ## data type
 
 ### String, str, String literal and string slice

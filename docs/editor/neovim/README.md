@@ -1,5 +1,18 @@
 # NeoVim
 
+## how to use recored to record repeatable work
+
+example add list mark for following items.
+item1
+item2
+item3
+
+1. press qz to start record action to registery z
+2. then do any actions you want insert a - then esc
+3. q to quit recording
+4. 2@z to make the action over the 2 line below
+5. :h q to view the help
+
 ## keymap
 
 | Action      | Key | Notes                       |

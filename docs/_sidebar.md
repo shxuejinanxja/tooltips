@@ -10,6 +10,7 @@
 
   - [Powershell](/coding/pwsh/)
   - [Designing APIs](/coding/APIs/)
+  - [Rust](/coding/rust.md)
 
 * Data
 

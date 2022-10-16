@@ -184,7 +184,51 @@ let subject=AlwaysEqual;
 
 all functions defined within an impl block are called accociated functions because they are associated with the type named after impl.
 
+## enum
+
+it's more than a type .
+the key of enum is variants.
+each variant in one enum type should have distinct boundary.
+but the variant could be different type.
+
+> enum give you a way of saying a value is one of a possible set of values.
+
+enum can be used in function signiture as other types.
+
+- variants of enum can be different type or even empty
+- we can also define methods on enum
+
+### Enum Option
+
+> programming language design is often thought of in terms of which features you include, but the features you exclude are important too.
+> Null: is a value that means there is no value there.
+> Rust **does not** have the Null feature
+> in languagewith null, variables can always be in one of two states: null or not-null.
+
+> The Option<T> enum is so useful that it’s even included in the prelude; you don’t need to bring it into scope explicitly. Its variants are also included in the prelude: you can use Some and None directly without the Option:: prefix. The Option<T> enum is still just a regular enum, and Some(T) and None are still variants of type Option<T>.
+
+Enum Option is very important. Be familiar with it's method can bring you benefits.
+
+### match
+
+_match_ is a extremely powerful control flow that allows you to compare a value against a series of **patterns** and then execute code based on which pattern matches.
+it's like a coin machine.
+
+#### patterns that bind to value
+
+match arms can bind to the parts of the values that match the pattern. So we can extract value out of enum variants.
+
 ## data type
+
+### how to check the variable type
+
+```rust
+use std::any::type_name
+fn type_of<T>(_:T)->&'static str{
+   type_name::<T>()
+}
+
+```
 
 ### String, str, String literal and string slice
 

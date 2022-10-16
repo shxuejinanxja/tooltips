@@ -218,6 +218,16 @@ it's like a coin machine.
 
 match arms can bind to the parts of the values that match the pattern. So we can extract value out of enum variants.
 
+### if let
+
+`if let` look not like if +let. it more like a
+if let <pattern> =< enum>.
+
+> The syntax if let takes a pattern and an expression separated by an equal sign. It works the same way as a match, where the expression is given to the match and the pattern is its first arm.
+> use if let will lost the exhaustive check since it only compare one pattern.
+
+the `else` in `if let ` pair is the `_` case.
+
 ## data type
 
 ### how to check the variable type

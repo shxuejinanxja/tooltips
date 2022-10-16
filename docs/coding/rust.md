@@ -228,6 +228,44 @@ if let <pattern> =< enum>.
 
 the `else` in `if let ` pair is the `_` case.
 
+## module system
+
+package ,crate, moduel and path
+
+### crate and package
+
+> A crate is the smallest amount of code that the Rust compiler considers at a time.
+
+- binary crate
+- library crate
+
+> A package is a bundle of one or more crates that provides a set of functionality.
+> a package contains a Cargo.toml that describe how to build those crates
+> if a pabke contains src/main.rs and src/lib.rs, it has two crates: a binary crate and a library crate
+> A package can have multiple binary crates by placing files in the src/bin directory: each file will be a separate binary crate.
+
+### modules cheat sheet
+
+- start from crate root
+- declaring modules
+  - declare module in crate root file `mod garden`, then it will looking for
+    - inline, within curly brackest that replace the semicolon following `mod garden`
+    - in the file src/garden.rs
+    - in the file src/garden/mod.rs
+- declaring submodules
+  > In any file other than the crate root, you can declare submodules. For example, you might declare mod vegetables; in src/garden.rs. The compiler will look for the submodule’s code within the directory named for the parent module in these places:
+  - inline, within curly brackest that replace the semicolon following `mod vegetables`
+  - in the file src/garden/vegetables.rs
+  - in the file src/garden/vegetables/mod.rs
+- paths to code in modules
+  > Once a module is part of your crate, you can refer to code in that module from anywhere else in that same crate, as long as the privacy rules allow, using the path to the code. For example, an Asparagus type in the garden vegetables module would be found at crate::garden::vegetables::Asparagus
+- private vs public
+  > Code within a module is private from its parent modules by default. To make a module public, declare it with pub mod instead of mod. To make items within a public module public as well, use pub before their declarations.
+  > Items in a parent module can’t use the private items inside child modules, but items in child modules can use the items in their ancestor modules. This is because child modules wrap and hide their implementation details, but the child modules can see the context in which they’re defined.
+  > In the absolute path, we start with crate, the root of our crate’s module tree. The front_of_house module is defined in the crate root. While front_of_house isn’t public, because the eat_at_restaurant function is defined in the same module as front_of_house (that is, eat_at_restaurant and front_of_house are siblings), we can refer to front_of_house from eat_at_restaurant.
+  > Enums aren’t very useful unless their variants are public; it would be annoying to have to annotate all enum variants with pub in every case, so the default for enum variants is to be public. Structs are often useful without their fields being public, so struct fields follow the general rule of everything being private by default unless annotated with pub.
+- the `use` keyword
+
 ## data type
 
 ### how to check the variable type

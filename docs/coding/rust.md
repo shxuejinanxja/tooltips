@@ -250,8 +250,9 @@ package ,crate, moduel and path
 - declaring modules
   - declare module in crate root file `mod garden`, then it will looking for
     - inline, within curly brackest that replace the semicolon following `mod garden`
-    - in the file src/garden.rs
-    - in the file src/garden/mod.rs
+    - in the file src/garden.rs , it's a new style
+    - in the file src/garden/mod.rs , it's a older style
+      you can't use both style for the same module. but using a mix of both styles for different modules in the same project is allowed.
 - declaring submodules
   > In any file other than the crate root, you can declare submodules. For example, you might declare mod vegetables; in src/garden.rs. The compiler will look for the submodule’s code within the directory named for the parent module in these places:
   - inline, within curly brackest that replace the semicolon following `mod vegetables`
@@ -265,6 +266,56 @@ package ,crate, moduel and path
   > In the absolute path, we start with crate, the root of our crate’s module tree. The front_of_house module is defined in the crate root. While front_of_house isn’t public, because the eat_at_restaurant function is defined in the same module as front_of_house (that is, eat_at_restaurant and front_of_house are siblings), we can refer to front_of_house from eat_at_restaurant.
   > Enums aren’t very useful unless their variants are public; it would be annoying to have to annotate all enum variants with pub in every case, so the default for enum variants is to be public. Structs are often useful without their fields being public, so struct fields follow the general rule of everything being private by default unless annotated with pub.
 - the `use` keyword
+
+  - it's idiomatic to bring a function into scope with use it's parent so it's clear that the function is not defined in the place of other place.
+
+  ```rust
+  use crate::front_of_house::hosting;
+  pub fn eat_at_restaurant(){
+  // it's clear here that add_to_waitlist is not defined in the root crate.
+     hosting::add_to_waitlist();
+  }
+
+  ```
+
+  - on the other hand, it's idiomatic to specific full path when bringing in struct, enums and other items.
+
+  ```rust
+  use std::collection::HashMap;
+  fn main(){
+    let mut map==HashMap::new();
+
+  }
+
+  ```
+
+  - to avoid name collison when bring in two types of the same name into the same scope, we can specific as and a new local name. or alias, for the type.
+
+  ```rust
+  use std::fmt::Result;
+  use std::io::Result as IoResult;
+
+  ```
+
+- Re-exporting
+  > When we bring a name into scope with the use keyword, the name available in the new scope is private. To enable the code that calls our code to refer to that name as if it had been defined in that code’s scope, we can combine pub and use. This technique is called re-exporting because we’re bringing an item into scope but also making that item available for others to bring into their scope.
+- using nested paths to clean up large use lists
+
+```rust
+use std::cmp::Ordering;
+use std::io;
+//equal
+use std::{cmp::Ordering,io};
+
+//other case
+use std::io;
+use std::io::Write;
+//equal
+use std::io::{self,Write};
+```
+
+- glob operator `*`
+  > If we want to bring all public items defined in a path into scope, we can specify that path followed by the _ glob operator: `use std::collections::_;`
 
 ## data type
 

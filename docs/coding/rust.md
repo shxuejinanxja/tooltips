@@ -392,6 +392,27 @@ fn type_of<T>(_:T)->&'static str{
 
 an item is a component of a crate. A crate is a unit of compilation and linking, as well as versioning, distribution, and runtime loading.
 
+## collections
+
+- Sequences: Vec, VecDeque, LinkedList
+- Maps: HashMap, BTreeMap
+- Sets: HashSet, BTreeSet
+- Misc: BinaryHeap
+
+### Vec
+
+std::vec::Vec
+
+- std : crate
+- vec : module
+- Vec : struct
+
+difference between array, tuple and Vec
+
+- [Vec](https://doc.rust-lang.org/std/vec/struct.Vec.html): struct,expansible size, data stored in heap,value next to each other
+- [array](https://doc.rust-lang.org/std/primitive.array.html): primitive type,fixed size,data stored in stack
+- [tuple](https://doc.rust-lang.org/std/primitive.tuple.html): primitive type, fixed size, element can be different, type
+
 ## loop
 
 ### loop label

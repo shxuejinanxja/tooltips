@@ -6,6 +6,7 @@
 - [Rust reference](https://doc.rust-lang.org/reference/introduction.html)
 - [Rust std](https://doc.rust-lang.org/std/index.html)
 - [Rust by example](https://doc.rust-lang.org/rust-by-example/index.html)
+- [Rustonomicon](https://doc.rust-lang.org/nomicon/intro.html)
 
 ## traits
 
@@ -412,6 +413,16 @@ difference between array, tuple and Vec
 - [Vec](https://doc.rust-lang.org/std/vec/struct.Vec.html): struct,expansible size, data stored in heap,value next to each other
 - [array](https://doc.rust-lang.org/std/primitive.array.html): primitive type,fixed size,data stored in stack
 - [tuple](https://doc.rust-lang.org/std/primitive.tuple.html): primitive type, fixed size, element can be different, type
+
+### String
+
+## error handling
+
+- Result<T,E>
+- ? Operator
+  > The ? Operator Can Only Be Used in Functions That Return Result
+  > There is a difference between what the match expression from Listing 9-6 and the ? operator do: error values that have the ? operator called on them go through the from function, defined in the From trait in the standard library, which is used to convert errors from one type into another. When the ? operator calls the from function, the error type received is converted into the error type defined in the return type of the current function. This is useful when a function returns one error type to represent all the ways a function might fail, even if parts might fail for many different reasons. As long as each error type implements the from function to define how to convert itself to the returned error type, the ? operator takes care of the conversion automatically.
+- who to call panic! the caller or the func be called.
 
 ## loop
 

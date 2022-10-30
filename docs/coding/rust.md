@@ -16,6 +16,66 @@
 - [Copy](https://doc.rust-lang.org/std/marker/trait.Copy.html)
 - [Clone](https://doc.rust-lang.org/std/clone/trait.Clone.html)
 
+### trait bounds
+
+> we can use traits bounds to specific a generic can be any type that has certrain behavior
+
+syntax `<T:Trait1> <T: Trait1+Trait2>`
+
+```rust
+for some_function<T,U>(t:T,u:U)->i32
+where T:Display+Clone,
+  U:Clone+Debug
+  {
+
+  }
+
+```
+
+### blanket implementations
+
+> conditionally implement a trait for any type that implements another trait.
+
+For example, the standard library implement the ToString trait on any type that implements the Display trait.
+
+```rust
+impl <T:Display> ToString for T{
+//--snip--
+}
+
+```
+
+### lifetime
+
+#### borrow check
+
+> the rust compiler has a borrow checker that compares scopes to determine whether all borrows are valid.
+> Lifetime annotations don’t change how long any of the references live.
+> &i32        // a reference
+> &'a i32     // a reference with an explicit lifetime
+> &'a mut i32 // a mutable reference with an explicit lifetime
+> When we pass concrete references to longest, the concrete lifetime that is substituted for 'a is the part of the scope of x that overlaps with the scope of y. In other words, the generic lifetime 'a will get the concrete lifetime that is equal to the smaller of the lifetimes of x and y. Because we’ve annotated the returned reference with the same lifetime parameter 'a, the returned reference will also be valid for the length of the smaller of the lifetimes of x and y.
+> Ultimately, lifetime syntax is about connecting the lifetimes of various parameters and return values of functions.
+
+#### lifetime annotations in Struct definitions
+
+lifetime annotations is similar to generic declaration in define of struct
+
+#### lifetime elision rules
+
+> These aren’t rules for programmers to follow; they’re a set of particular cases that the compiler will consider, and if your code fits these cases, you don’t need to write the lifetimes explicitly.
+> Lifetimes on function or method parameters are called input lifetimes, and lifetimes on return values are called output lifetimes.
+
+Three rules
+
+- The first rule is that each parameter that is a reference gets its own lifetime parameter. In other words, a function with one parameter gets one lifetime parameter: fn foo<'a>(x: &'a i32); a function with two parameters gets two separate lifetime parameters: fn foo<'a, 'b>(x: &'a i32, y: &'b i32); and so on.
+- The second rule is if there is exactly one input lifetime parameter, that lifetime is assigned to all output lifetime parameters: fn foo<'a>(x: &'a i32) -> &'a i32.
+- The third rule is if there are multiple input lifetime parameters, but one of them is &self or &mut self because this is a method, the lifetime of self is assigned to all output lifetime parameters. This third rule makes methods much nicer to read and write because fewer symbols are necessary.
+
+#### lifetime annotations in method definitions
+
+> Lifetime names for struct fields always need to be declared after the impl keyword and then used after the struct’s name, because those lifetimes are part of the struct’s type.
+
 ## [Derive](https://doc.rust-lang.org/reference/attributes/derive.html)
 
 - [derive macros](https://doc.rust-lang.org/reference/procedural-macros.html#derive-macros)
